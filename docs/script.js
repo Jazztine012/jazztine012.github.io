@@ -16,7 +16,7 @@ function generateQRCode(elementId, location, queueNumber) {
         hour12: true
     });
 
-    const qrCodeURL = `https://yourdomain.github.io/qrcodeSTI/public/queue.html?location=${location}&queue=${queueNumber}&timestamp=${timestamp}`;
+    const qrCodeURL = `https://jazztine012.github.io/docs/queue.html?location=${location}&queue=${queueNumber}&timestamp=${timestamp}`;
     document.getElementById(elementId).innerHTML = '';
     new QRCode(document.getElementById(elementId), {
         text: qrCodeURL,
