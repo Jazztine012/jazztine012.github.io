@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>Version: 10182024.linking</p>
+    <h1>QR Code for Queue System</h1>
+
+    <div id="qr-container">
+        <div class="qr-section" id="cashier-section">
+            <div class="queue-count">Cashier Queue</div>
+            <div class="qr-code" id="cashier"></div>
+            <p>Queue Number: <span id="cashier-queue-number"></span></p>
+            <p>Generated at: <span class="timestamp" id="cashier-timestamp"></span></p>
+        </div>
+
+        <div class="qr-section" id="registrar-section">
+            <div class="queue-count">Registrar Queue</div>
+            <div class="qr-code" id="registrar"></div>
+            <p>Queue Number: <span id="registrar-queue-number"></span></p>
+            <p>Generated at: <span class="timestamp" id="registrar-timestamp"></span></p>
+        </div>
+
+        <div class="qr-section" id="front-desk-section">
+            <div class="queue-count">Front Desk Queue</div>
+            <div class="qr-code" id="front-desk"></div>
+            <p>Queue Number: <span id="front-desk-queue-number"></span></p>
+            <p>Generated at: <span class="timestamp" id="front-desk-timestamp"></span></p>
+        </div>
+    </div>
+
+    <h2>Scanned Customers</h2>
+    <ul id="scanned-customers"></ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+    font-size: 24px;
+    width: 100%;
+}
+
+.container {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.wait-time, .queue-number, .hint-text {
+    text-align: center;
+}
+
+.queue-number {
+    font-size: 64px;
+    color: #000;
+    font-weight: bold;
+}
+
+input[type="tel"], select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    header, .wait-time {
+        font-size: 20px;
+    }
+    .queue-number {
+        font-size: 32px;
+    }
+}

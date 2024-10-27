@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Confirmation</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>Queue Confirmation</h1>
+    <p id="confirmation-text">You have successfully joined the queue.</p>
+
+    <h2>Queue List</h2>
+    <table id="queue-list">
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Queue Number</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const queueLocation = params.get('location');
+        const queue = params.get('queue');
+        const timestamp = new Date(params.get('timestamp')).toLocaleString();
+        document.getElementById('confirmation-text').innerText = 
+            `You have joined the queue for ${queueLocation}. Your queue number is ${queue}. The QR code was generated at: ${timestamp}.`;
+        const tableBody = document.getElementById('queue-list').querySelector('tbody');
+        const row = `<tr><td>${queueLocation}</td><td>${queue}</td><td>${timestamp}</td></tr>`;
+        tableBody.innerHTML += row;
+        const socket = new WebSocket('ws://localhost:3000');
+        socket.addEventListener('open', function () {
+            const customerData = {
+                location: queueLocation,
+                queueNumber: queue,
+                timestamp: timestamp
+            };
+            socket.send(JSON.stringify(customerData));
+        });
+    </script>
+</body>
+</html>

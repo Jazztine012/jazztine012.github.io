@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, header {
+    color: #0056b3;
+    text-align: center;
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+    font-size: 24px;
+}
+
+#qr-container, .container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.qr-section, .wait-time, .queue-number, .hint-text, .timestamp {
+    text-align: center;
+}
+
+.queue-count {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.qr-code {
+    margin-bottom: 10px;
+}
+
+.queue-number {
+    font-size: 64px;
+    font-weight: bold;
+    color: #000;
+}
+
+.wait-time {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+input[type="tel"], select, button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    h1, header {
+        font-size: 20px;
+    }
+    .queue-number {
+        font-size: 32px;
+    }
+}

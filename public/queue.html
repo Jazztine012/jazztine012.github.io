@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Status</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="customer_queue_style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>STI College - Tagaytay</header>
+    <div class="container" id="container">
+        <p>Version: 10182024.linking</p><br>
+        <div class="wait-time">Estimated Waiting Time: <span id="waiting-time">00:00</span></div>     
+        <p id="confirmation-text">You have successfully joined the queue.</p>
+        <div class="hint-text" id="window-name"><strong>Location</strong></div>
+        <div class="hint-text">Your queue number is:</div>
+        <div class="queue-number" id="queue-number">Number</div>
+        <p class="hint-text" id="timestamp-text"><strong>Timestamp</strong></p>
+
+        <form id="mobile-form">
+            <input type="tel" id="mobile-number" placeholder="Mobile Number" pattern="[0-9]*" maxlength="10" required>
+            <button type="submit">Send Code</button>
+        </form>
+
+        <form id="transaction-form">
+            <select required>
+                <option value="" disabled selected>Select Transaction Type</option>
+                <option value="Type1">Type 1</option>
+                <option value="Type2">Type 2</option>
+                <option value="Type3">Type 3</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
